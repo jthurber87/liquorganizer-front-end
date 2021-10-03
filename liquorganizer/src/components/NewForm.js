@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 
 const NewForm = (props) => {
@@ -10,7 +10,7 @@ const NewForm = (props) => {
     })
 
     const handleChange = (e) => {
-        setInput({...input,[e.target.name]: e.target.value})
+        setInput({ ...input, [e.target.name]: e.target.value })
     }
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -18,7 +18,7 @@ const NewForm = (props) => {
     }
 
     //Fetch(POST-CREATE)
-    const addItem = async(data) => {
+    const addItem = async (data) => {
         try {
             const configs = {
                 method: 'POST',

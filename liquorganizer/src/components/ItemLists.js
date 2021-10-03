@@ -1,5 +1,5 @@
-import Reqct, {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import Reqct, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function ItemLists(props) {
     const [bottles, setBottles] = useState([])
@@ -16,21 +16,21 @@ function ItemLists(props) {
 
     useEffect(() => {
         getBottles();
-    },[]);
+    }, []);
 
     return (
         <>
-        <div>
-            {bottles && bottles.map(item => (
-                <div className='item' key={item._id}>
-                    <h4>{item.spirit} {item.brand}</h4>
-                    <h4>{item.count}</h4>
-                    <h4>{item.notes}</h4>
-                </div>
-            ))}
-        </div>
-        <div>
-            <link to '/bottles/new'>Create New Bottles</Link>
+            <div>
+                {bottles && bottles.map(item => (
+                    <div className='item' key={item._id}>
+                        <h4>{item.spirit} {item.brand}</h4>
+                        <h4>{item.count}</h4>
+                        <h4>{item.notes}</h4>
+                    </div>
+                ))}
+            </div>
+            <div>
+                <link to '/bottles/new'>Create New Bottles</Link>
         </div>
         </>
     )

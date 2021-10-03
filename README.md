@@ -1,1 +1,1 @@
-# liquorsly-front-end
+# liquorganizer-front-end

@@ -6,7 +6,8 @@ function EditForm(props) {
         spirit: '',
         brand: '',
         count: 0,
-        notes: ''
+        notes: '',
+        img: ''
     }
 
     const [input, setInput] = useState(initialState)
@@ -19,6 +20,11 @@ function EditForm(props) {
             const foundBottle = await fetch('http://localhost:9000/bottles/' + id)
             const parsedBottle = await foundBottle.json()
             setInput(parsedBottle)
+            setLoading(false)
+            if (foundBottle.status === 200) {
+              const parsedBottle = await foundBottle.json();
+              setInput(parsedBottle)
+            }
             setLoading(false)
         } catch (error) {
             console.log(error)
@@ -41,7 +47,7 @@ function EditForm(props) {
     }
 
     const handleSubmit = (e) => {
-        e.prevendDefault()
+        e.preventDefault()
         const { spirit, brand, count, notes } = input;
         const bottlesData = { spirit, brand, count, notes }
         updateBottle(input._id, bottlesData);
@@ -68,7 +74,7 @@ function EditForm(props) {
             })
             console.log(deleteBottle);
             const parsedDeletedBottle = await deleteBottle.json();
-            props.history.push('/bottles')
+            props.history.push('/bottles/')
         } catch (error) {
             console.log(error)
         }
@@ -96,6 +102,10 @@ function EditForm(props) {
                     <div>
                         <label htmlFor='notes'>Notes</label>
                         <input name='notes' id='notes' value={input.notes} onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor='img'>Image</label>
+                        <input name='img' id='img' value={input.img} onChange={handleChange} />
                     </div>
                     <div>
                         <input type='submit' value='Confirm Changes' />

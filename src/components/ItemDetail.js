@@ -19,6 +19,7 @@ function ItemDetail(props) {
     return (
         <>
             <h1>Details</h1>
+            <img src= {bottles.img} />
             <p>Spirit: {bottles.spirit}</p>
             <p>Brand: {bottles.brand}</p>
             <p>Count: {bottles.count}</p>

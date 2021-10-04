@@ -6,7 +6,8 @@ const NewForm = (props) => {
         spirit: "",
         brand: "",
         count: 1,
-        notes: ""
+        notes: "",
+        img: ""
     })
 
     //Fetch(POST-CREATE)
@@ -20,9 +21,9 @@ const NewForm = (props) => {
                 },
             };
             await fetch("http://localhost:9000/bottles", configs)
+            props.history.push('/bottles/')
         } catch (error) {
             console.log(error)
-            props.history.push('/bottles/')
         }
     }
 
@@ -38,16 +39,19 @@ const NewForm = (props) => {
         <form onSubmit={handleSubmit}>
             <label htmlFor='spirit'>Spirit</label>
             <input name='spirit' id='spirit' value={input.spirit} onChange={handleChange} />
-
+            <br />
             <label htmlFor='brand'>Brand</label>
             <input name='brand' id='brand' value={input.brand} onChange={handleChange} />
-
+            <br />
             <label htmlFor='count'>Count</label>
             <input type='number' name='count' id='count' value={input.count} onChange={handleChange} />
-
+            <br />
             <label htmlFor='notes'>Notes</label>
             <input name='notes' id='notes' value={input.notes} onChange={handleChange} />
-
+            <br />
+            <label htmlFor='img'>Image</label>
+            <input name='img' id='img' value={input.img} onChange={handleChange} />
+            <br />
             <input type="submit" value="submit" />
         </form>
     )

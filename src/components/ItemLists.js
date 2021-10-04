@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import FlipCard from './FlipCard'
 
 function ItemLists(props) {
     const [bottles, setBottles] = useState([])
@@ -20,18 +21,16 @@ function ItemLists(props) {
 
     return (
         <>
-            <div>
+            <div className="allBottles">
                 {bottles && bottles.map(item => (
                     <div className='item' key={item._id}>
-                        <h4>Spirit: {item.spirit} {item.brand}</h4>
-                        <h4>Count: {item.count}</h4>
-                        <h4>Notes: {item.notes}</h4>
-                        <button><Link to={`/bottles/${item._id}`}>See Details</Link></button>
+                      <FlipCard item={item}/>
+                        <h4>{item.count}</h4>
                     </div>
                 ))}
             </div>
             <div>
-                <Link to='/bottles/new'>Create New Bottles</Link>
+                <Link to='/bottles/new'>Add Bottle</Link>
         </div>
         </>
     )

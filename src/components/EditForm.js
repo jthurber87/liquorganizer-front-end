@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+// import { Link } from 'react-router-dom'
 
 function EditForm(props) {
     const initialState = {
@@ -10,6 +11,7 @@ function EditForm(props) {
 
     const [input, setInput] = useState(initialState)
     const [loading, setLoading] = useState(true)
+    const [showModal, setShowModal] = useState(false)
 
     const getBottleToEdit = async (id) => {
         try {
@@ -33,9 +35,11 @@ function EditForm(props) {
         }
 
         const updateBottle = await fetch('http://localhost:9000/bottles/' + id, configs)
-        const parsedBottle = await updateBottle.json();
+        const parsedUpdateBottle = await updateBottle.json();
+        console.log('after update:', parsedUpdateBottle.spirit);
         props.history.push('/bottles/' + id)
     }
+
     const handleSubmit = (e) => {
         e.prevendDefault()
         const { spirit, brand, count, notes } = input;
@@ -44,36 +48,74 @@ function EditForm(props) {
     }
 
     const handleChange = (e) => {
-        setInput({...input, [e.target.name]: e.target.value})
+        setInput({ ...input, [e.target.name]: e.target.value })
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getBottleToEdit()
-    },[])
+    }, [])
+
+    const toggleDeleteModal = (e) => {
+        e.preventDefault();
+        setShowModal(!showModal);
+    }
 
 
-    return(
+    const deleteBottle = async (id) => {
+        try {
+            const deleteBottle = await fetch('http://localhost:9000/bottles/' + id, {
+                method: 'DELETE',
+            })
+            console.log(deleteBottle);
+            const parsedDeletedBottle = await deleteBottle.json();
+            props.history.push('/bottles')
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    return (
         <div>
             <h1>Edit Form</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor='spirit'>Spirit</label>
-                    <input name='spirit' id='spirit' value={input.spirit} onChange={handleChange}/>
-                </div>
-                <div>
-                    <label htmlFor='brand'>Brand</label>
-                    <input name='brand' id='brand' value={input.brand} onChange={handleChange}/>
-                </div>
-                <div>
-                    <label htmlFor='count'>Count</label>
-                    <input type='number' name='count' id='count' value={input.count} onChange={handleChange}/>
-                </div>
-                <div>
-                    <label htmlFor='notes'>Notes</label>
-                    <input name='notes' id='notes' value={input.notes} onChange={handleChange}/>
-                </div>
+            {loading ? (
+                <h3>Loading...</h3>
+            ) : (
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor='spirit'>Spirit</label>
+                        <input name='spirit' id='spirit' value={input.spirit} onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor='brand'>Brand</label>
+                        <input name='brand' id='brand' value={input.brand} onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor='count'>Count</label>
+                        <input type='number' name='count' id='count' value={input.count} onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor='notes'>Notes</label>
+                        <input name='notes' id='notes' value={input.notes} onChange={handleChange} />
+                    </div>
+                    <div>
+                        <input type='submit' value='Confirm Changes' />
+                        <button onClick={toggleDeleteModal}>Trash</button>
+                    </div>
+                </form>
+            )}
 
-            </form>
+            {
+                showModal ? (
+                    <div>
+                        <h1>Yeah Trash!!!!</h1>
+                        <h3>Are you sure?</h3>
+                        <div>
+                            <button onClick={() => deleteBottle(input._id)}>Trash!!!!</button>
+                            <button onClick={toggleDeleteModal}>Cancel</button>
+                        </div>
+                    </div>
+                ) : null
+            }
         </div>
     )
 }

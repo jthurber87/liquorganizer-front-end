@@ -1,9 +1,11 @@
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-flex-start;
   align-items: center;
-  width: 80v
+
+  background-size: cover;
+  height: 100vh
 }
 
 .allBottles {
@@ -22,6 +24,8 @@
   height: 200px;
   border: 1px solid red;
   padding: 10px;
+  background-color: white;
+  border-radius: 5%
 }
 
 form {
@@ -31,6 +35,9 @@ form {
   align-items: center;
 }
 
+
+
 img {
-  width: 150px
+  width: 150px;
+  border-radius: 25%
 }

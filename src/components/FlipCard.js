@@ -19,8 +19,8 @@ class FlipCard extends React.Component {
     return (
       <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
           <div className="flipCard" onClick={this.handleClick}>
-            <img src={this.props.item.img} />
-            <Link to={`/bottles/${this.props.item._id}/edit`}><h2>{this.props.item.brand}</h2></Link>
+            <img src={this.props.item.img} /><br/>
+            <Link to={`/bottles/${this.props.item._id}/edit`}>{this.props.item.brand}</Link>
           </div>
 
           <div className="flipCard" onClick={this.handleClick}>

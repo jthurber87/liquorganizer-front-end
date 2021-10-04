@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import FlipCard from './FlipCard'
+import { Button } from 'react-bootstrap'
 
 function ItemLists(props) {
     const [bottles, setBottles] = useState([])
@@ -21,11 +22,12 @@ function ItemLists(props) {
 
     return (
         <>
+
             <div className="allBottles">
                 {bottles && bottles.map(item => (
                     <div className='item' key={item._id}>
                       <FlipCard item={item}/>
-                      <h4>{item.count}</h4>
+                      <h4>Quantity:{item.count}</h4>
                     </div>
                 ))}
             </div>

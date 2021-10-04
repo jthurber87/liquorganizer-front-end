@@ -50,8 +50,8 @@ function EditForm(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const { spirit, brand, count, notes } = input;
-        const bottlesData = { spirit, brand, count, notes }
+        const { spirit, brand, count, notes, img } = input;
+        const bottlesData = { spirit, brand, count, notes, img }
         updateBottle(input._id, bottlesData);
     }
 

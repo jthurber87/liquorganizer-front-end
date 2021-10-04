@@ -3,12 +3,14 @@ import ItemDetail from './components/ItemDetail';
 import ItemLists from './components/ItemLists';
 import NewForm from './components/NewForm';
 import EditForm from './components/EditForm';
+import NavBar from './components/NavBar';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Liquor App</h1>
+      <NavBar />
       <Router>
         <Switch>
           <Route exact path="/bottles" component={ItemLists} />

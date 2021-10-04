@@ -1,21 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 const NewForm = (props) => {
     const [input, setInput] = useState({
         spirit: "",
         brand: "",
-        count: 0,
+        count: 1,
         notes: ""
     })
-
-    const handleChange = (e) => {
-        setInput({ ...input, [e.target.name]: e.target.value })
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        addItem(input)
-    }
 
     //Fetch(POST-CREATE)
     const addItem = async (data) => {
@@ -24,9 +16,9 @@ const NewForm = (props) => {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
-                    "Content=Type": "application/json"
-                }
-            }
+                    "Content-Type": "application/json"
+                },
+            };
             await fetch("http://localhost:9000/bottles", configs)
         } catch (error) {
             console.log(error)
@@ -34,6 +26,14 @@ const NewForm = (props) => {
         }
     }
 
+    const handleChange = (e) => {
+        setInput({ ...input, [e.target.name]: e.target.value })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        addItem(input)
+    }
     return (
         <form onSubmit={handleSubmit}>
             <label htmlFor='spirit'>Spirit</label>
@@ -47,6 +47,8 @@ const NewForm = (props) => {
 
             <label htmlFor='notes'>Notes</label>
             <input name='notes' id='notes' value={input.notes} onChange={handleChange} />
+
+            <input type="submit" value="submit" />
         </form>
     )
 };

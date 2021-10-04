@@ -30,7 +30,7 @@ function ItemLists(props) {
                 ))}
             </div>
             <div>
-                <link to '/bottles/new'>Create New Bottles</Link>
+                <Link to='/bottles/new'>Create New Bottles</Link>
         </div>
         </>
     )

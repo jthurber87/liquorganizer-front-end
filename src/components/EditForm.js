@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 // import { Link } from 'react-router-dom'
 
 function EditForm(props) {
+    console.log(props)
     const initialState = {
         spirit: '',
         brand: '',
@@ -41,6 +42,7 @@ function EditForm(props) {
         }
 
         const updateBottle = await fetch('http://localhost:9000/bottles/' + id, configs)
+        console.log(updateBottle)
         const parsedUpdateBottle = await updateBottle.json();
         console.log('after update:', parsedUpdateBottle.spirit);
         props.history.push('/bottles/' + id)

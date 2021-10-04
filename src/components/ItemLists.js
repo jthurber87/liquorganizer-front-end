@@ -25,7 +25,7 @@ function ItemLists(props) {
                 {bottles && bottles.map(item => (
                     <div className='item' key={item._id}>
                       <FlipCard item={item}/>
-                        <h4>{item.count}</h4>
+                      <h4>{item.count}</h4>
                     </div>
                 ))}
             </div>

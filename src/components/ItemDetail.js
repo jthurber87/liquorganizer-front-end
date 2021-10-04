@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom'
 
 function ItemDetail(props) {
     const currentId = props.match.params.id
@@ -17,9 +18,13 @@ function ItemDetail(props) {
 
     return (
         <>
-            <h1>Detail</h1>
-            <p>{bottles._id}</p>
-            {/* will add code more after test */}
+            <h1>Details</h1>
+            <p>Spirit: {bottles.spirit}</p>
+            <p>Brand: {bottles.brand}</p>
+            <p>Count: {bottles.count}</p>
+            <p>Notes: {bottles.notes}</p>
+            <button><Link to={`/bottles/`}>Go back</Link></button>
+            <button><Link to={`/bottles/${bottles._id}/edit`}>Edit</Link></button>
         </>
     )
 };

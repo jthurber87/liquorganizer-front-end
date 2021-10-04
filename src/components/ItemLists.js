@@ -1,4 +1,4 @@
-import Reqct, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 function ItemLists(props) {
@@ -23,9 +23,10 @@ function ItemLists(props) {
             <div>
                 {bottles && bottles.map(item => (
                     <div className='item' key={item._id}>
-                        <h4>{item.spirit} {item.brand}</h4>
-                        <h4>{item.count}</h4>
-                        <h4>{item.notes}</h4>
+                        <h4>Spirit: {item.spirit} {item.brand}</h4>
+                        <h4>Count: {item.count}</h4>
+                        <h4>Notes: {item.notes}</h4>
+                        <button><Link to={`/bottles/${item._id}`}>See Details</Link></button>
                     </div>
                 ))}
             </div>

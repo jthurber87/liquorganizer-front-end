@@ -22,7 +22,7 @@ const NewForm = (props) => {
             await fetch("http://localhost:9000/bottles", configs)
         } catch (error) {
             console.log(error)
-            props.history.push('/bottles/new')
+            props.history.push('/bottles/')
         }
     }
 

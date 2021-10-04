@@ -6,14 +6,15 @@ const NavBar = () => {
   return(
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-      <Navbar.Brand href="#home">Liquorganizer</Navbar.Brand>
+      <Navbar.Brand href="/bottles">Liquorganizer</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
 
       <Navbar.Collapse id="responsive-navbar-nav collasible-nav-dropdown">
         <Nav className="me-auto">
           <NavDropdown title="More" id="">
-            <NavDropdown.Item href="#action/3.1">Add Bottle</NavDropdown.Item>
+            <NavDropdown.Item href="/bottles/new">Add Bottle</NavDropdown.Item>
+
             <NavDropdown.Item href="#action/3.2">Another Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Another Action</NavDropdown.Item>
           </NavDropdown>

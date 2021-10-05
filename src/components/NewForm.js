@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Form, Button } from 'react-bootstrap'
 
 const NewForm = (props) => {
     const [input, setInput] = useState({
@@ -37,24 +37,32 @@ const NewForm = (props) => {
     }
     return (
       <div className="card">
-        <form onSubmit={handleSubmit}>
-            <label htmlFor='spirit'>Spirit</label>
-            <input name='spirit' id='spirit' value={input.spirit} onChange={handleChange} />
-            <br />
-            <label htmlFor='brand'>Brand</label>
-            <input name='brand' id='brand' value={input.brand} onChange={handleChange} />
-            <br />
-            <label htmlFor='count'>Count</label>
-            <input type='number' name='count' id='count' value={input.count} onChange={handleChange} />
-            <br />
-            <label htmlFor='notes'>Notes</label>
-            <input name='notes' id='notes' value={input.notes} onChange={handleChange} />
-            <br />
-            <label htmlFor='img'>Image</label>
-            <input name='img' id='img' value={input.img} onChange={handleChange} />
-            <br />
-            <input type="submit" value="submit" />
-        </form>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formBasicSpirit">
+            <Form.Label htmlFor="spirit">Spirit</Form.Label>
+            <Form.Control type="text" name='spirit' id='spirit' value={input.spirit} onChange={handleChange}/>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicBrand">
+            <Form.Label>Brand</Form.Label>
+            <Form.Control type="text" name='brand' id='brand' value={input.brand} onChange={handleChange}/>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicCount">
+            <Form.Label>Count</Form.Label>
+            <Form.Control type="number" name='count' id='count' value={input.count} onChange={handleChange} />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicNotes">
+            <Form.Label>Notes</Form.Label>
+            <Form.Control type="text" as="textarea" name='notes' id='notes' value={input.notes} onChange={handleChange} />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicImg">
+            <Form.Label>Image</Form.Label>
+            <Form.Control type="text" name='img' value={input.img} onChange={handleChange} />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+      </Form>
+
 
       </div>
     )

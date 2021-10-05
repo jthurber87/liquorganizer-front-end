@@ -9,12 +9,12 @@
   flex-direction: column;
   justify-content: flex-flex-start;
   align-items: center;
-
   background:
     linear-gradient(to bottom, rgb(33, 37, 41, 0.52), rgba(225, 225, 225, 0.93)),
     url("https://images.unsplash.com/photo-1520776174717-a1ea0e6069df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80");
-
-  height: 100vh
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .navbar-nav {
@@ -38,6 +38,7 @@ margin: 20;
 .allBottles {
   display: flex;
   justify-content: center;
+  flex-flow: wrap;
 }
 
 .item {
@@ -55,6 +56,10 @@ margin: 20;
   border-radius: 5%
 }
 
+.card {
+  padding: 10px;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -63,8 +68,7 @@ form {
 }
 
 
-
 img {
-  width: 150px;
+  width: 100%;
   border-radius: 25%
 }

@@ -20,7 +20,7 @@ const NewForm = (props) => {
                     "Content-Type": "application/json"
                 },
             };
-            await fetch("http://localhost:9000/bottles", configs)
+            await fetch("https://liquorganizer-back-end.herokuapp.com/bottles", configs)
             props.history.push('/bottles')
         } catch (error) {
             console.log(error)

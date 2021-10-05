@@ -26,7 +26,7 @@ body {
 .App{
   display: flex;
   flex-direction: column;
-  justify-content: flex-flex-start;
+  justify-content: flex-start;
   align-items: center;
   max-width: inherit;
   height: auto;
@@ -58,11 +58,10 @@ max-height: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 40px;
 }
 
 .item {
-  margin: 30px;
+  margin: 20px;
   padding: 15px;
   text-align: center;
 }
@@ -99,6 +98,7 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 25px
 }
 
 /* .allBottles {

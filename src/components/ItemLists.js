@@ -13,7 +13,7 @@ function ItemLists(props) {
     }
     const getBottles = async () => {
         try {
-            const bottlesResults = await fetch('http://localhost:9000/bottles/');
+            const bottlesResults = await fetch("https://liquorganizer-back-end.herokuapp.com/bottles");
             console.log(bottlesResults)
             const parsedBottles = await bottlesResults.json();
             console.log(parsedBottles)
@@ -27,7 +27,7 @@ function ItemLists(props) {
         const updatedBottle = bottles.find(bottle => bottle._id === id);
 
         try {
-            const response = await fetch("http://localhost:9000/bottles/" + id, {
+            const response = await fetch("https://liquorganizer-back-end.herokuapp.com/bottles/" + id, {
                 method: "PUT",
                 body: JSON.stringify({ ...updatedBottle, count: updatedBottle.count - 1 }),
                 headers: {
@@ -52,7 +52,7 @@ function ItemLists(props) {
         const updatedBottle = bottles.find(bottle => bottle._id === id);
 
         try {
-            const response = await fetch('http://localhost:9000/bottles/' + id, {
+            const response = await fetch('https://liquorganizer-back-end.herokuapp.com/bottles/' + id, {
                 method: 'PUT',
                 body: JSON.stringify({ ...updatedBottle, count: updatedBottle.count + 1 }),
                 headers: {
@@ -94,6 +94,7 @@ function ItemLists(props) {
                 <div>
                     <Button onClick={redirect}>Add Bottle</Button>
                 </div>
+                <br/>
             </>
         )
 }

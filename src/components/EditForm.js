@@ -18,7 +18,7 @@ function EditForm(props) {
     const getBottleToEdit = async (id) => {
         try {
             const id = props.match.params.id;
-            const foundBottle = await fetch('http://localhost:9000/bottles/' + id)
+            const foundBottle = await fetch("https://liquorganizer-back-end.herokuapp.com/bottles/" + id)
             const parsedBottle = await foundBottle.json()
             setInput(parsedBottle)
             setLoading(false)
@@ -41,7 +41,7 @@ function EditForm(props) {
             }
         }
 
-        const updateBottle = await fetch('http://localhost:9000/bottles/' + id, configs)
+        const updateBottle = await fetch("https://liquorganizer-back-end.herokuapp.com/bottles/" + id, configs)
         console.log(updateBottle)
         const parsedUpdateBottle = await updateBottle.json();
         console.log('after update:', parsedUpdateBottle.spirit);
@@ -71,7 +71,7 @@ function EditForm(props) {
 
     const deleteBottle = async (id) => {
         try {
-            const deleteBottle = await fetch('http://localhost:9000/bottles/' + id, {
+            const deleteBottle = await fetch('https://liquorganizer-back-end.herokuapp.com/bottles/' + id, {
                 method: 'DELETE',
             })
             console.log(deleteBottle);

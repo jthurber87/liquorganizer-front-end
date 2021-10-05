@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function ItemDetail(props) {
     const currentId = props.match.params.id
@@ -19,7 +19,7 @@ function ItemDetail(props) {
     return (
         <>
             <h1>Details</h1>
-            <img src= {bottles.img} />
+            <img src={bottles.img} />
             <p>Spirit: {bottles.spirit}</p>
             <p>Brand: {bottles.brand}</p>
             <p>Count: {bottles.count}</p>

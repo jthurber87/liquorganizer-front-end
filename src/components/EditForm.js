@@ -23,8 +23,8 @@ function EditForm(props) {
             setInput(parsedBottle)
             setLoading(false)
             if (foundBottle.status === 200) {
-              const parsedBottle = await foundBottle.json();
-              setInput(parsedBottle)
+                const parsedBottle = await foundBottle.json();
+                setInput(parsedBottle)
             }
             setLoading(false)
         } catch (error) {
@@ -131,5 +131,20 @@ function EditForm(props) {
         </div>
     )
 }
+
+// function Modal(props) {
+//     return(<>
+//         <h1>Are you sure delete {props.bottles.spirit} ?</h1>
+//         <div className='details'>
+//             <p>Brand: {props.botle</p>
+//             <p></p>
+//             <p></p>
+//             <p></p>
+//         </div>
+//         <button>Delete</button>
+//         <button>Keep it</button>
+//         </>
+//     )
+// }
 
 export default EditForm

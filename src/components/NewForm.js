@@ -36,27 +36,27 @@ const NewForm = (props) => {
         addItem(input)
     }
     return (
-      <div className="card">
-        <form onSubmit={handleSubmit}>
-            <label htmlFor='spirit'>Spirit</label>
-            <input name='spirit' id='spirit' value={input.spirit} onChange={handleChange} />
-            <br />
-            <label htmlFor='brand'>Brand</label>
-            <input name='brand' id='brand' value={input.brand} onChange={handleChange} />
-            <br />
-            <label htmlFor='count'>Count</label>
-            <input type='number' name='count' id='count' value={input.count} onChange={handleChange} />
-            <br />
-            <label htmlFor='notes'>Notes</label>
-            <input name='notes' id='notes' value={input.notes} onChange={handleChange} />
-            <br />
-            <label htmlFor='img'>Image</label>
-            <input name='img' id='img' value={input.img} onChange={handleChange} />
-            <br />
-            <input type="submit" value="submit" />
-        </form>
+        <div className="card">
+            <form onSubmit={handleSubmit}>
+                <label htmlFor='spirit'>Spirit</label>
+                <input name='spirit' id='spirit' value={input.spirit} onChange={handleChange} />
+                <br />
+                <label htmlFor='brand'>Brand</label>
+                <input name='brand' id='brand' value={input.brand} onChange={handleChange} />
+                <br />
+                <label htmlFor='count'>Count</label>
+                <input type='number' name='count' id='count' value={input.count} onChange={handleChange} />
+                <br />
+                <label htmlFor='notes'>Notes</label>
+                <input name='notes' id='notes' value={input.notes} onChange={handleChange} />
+                <br />
+                <label htmlFor='img'>Image</label>
+                <input name='img' id='img' value={input.img} onChange={handleChange} />
+                <br />
+                <input type="submit" value="submit" />
+            </form>
 
-      </div>
+        </div>
     )
 };
 

@@ -45,7 +45,7 @@ function EditForm(props) {
         console.log(updateBottle)
         const parsedUpdateBottle = await updateBottle.json();
         console.log('after update:', parsedUpdateBottle.spirit);
-        props.history.push('/bottles/' + id)
+        props.history.push('/bottles/')
     }
 
     const handleSubmit = (e) => {

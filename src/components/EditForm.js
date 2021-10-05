@@ -84,7 +84,6 @@ function EditForm(props) {
 
     return (
         <div>
-            <h1>Edit Form</h1>
             {loading ? (
                 <h3>Loading...</h3>
             ) : (

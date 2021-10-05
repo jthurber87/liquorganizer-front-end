@@ -111,8 +111,9 @@ function EditForm(props) {
                     <Form.Control type="text" name='img' value={input.img} onChange={handleChange} />
                   </Form.Group>
                   <Button variant="primary" type="submit">
-                    Submit
+                    Confirm Changes
                   </Button>
+
               </Form>
             </div>
             )}

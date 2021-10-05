@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import FlipCard from './FlipCard'
 import { Button } from 'react-bootstrap'
 
+
+
 function ItemLists(props) {
     const [bottles, setBottles] = useState([])
 
@@ -30,12 +32,11 @@ function ItemLists(props) {
                       <h4>Quantity:{item.count}</h4>
                     </div>
                 ))}
-
             </div>
 
             <div>
-                <Link to='/bottles/new'>Add Bottle</Link>
-        </div>
+              <button variant="primary"><Link to={`/bottles/new`}>Add Bottle</Link></button>
+            </div>
         </>
     )
 }

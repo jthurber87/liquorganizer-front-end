@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom';
+
 
 const NewForm = (props) => {
+
+    let history = useHistory();
+
+    const redirect = () => {
+    history.push('/bottles')
+    }
+
     const [input, setInput] = useState({
         spirit: "",
         brand: "",
@@ -58,9 +67,10 @@ const NewForm = (props) => {
             <Form.Label>Image</Form.Label>
             <Form.Control type="text" name='img' value={input.img} onChange={handleChange} />
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
+          <div className="cancel-submit">
+            <Button onClick={redirect}>Back</Button>
+            <Button variant="primary" type="submit">Submit</Button>
+          </div>
       </Form>
 
 

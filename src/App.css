@@ -13,6 +13,12 @@
   max-height: 65px;
 }
 
+.cancel-submit {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+
 body {
   background-image:
   linear-gradient(to bottom, rgb(30, 36, 34, 0.42), rgba(225, 225, 225, 0.33)),

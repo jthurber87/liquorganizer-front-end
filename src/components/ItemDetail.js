@@ -18,6 +18,7 @@ function ItemDetail(props) {
 
     return (
         <>
+        <div className="card">
             <h1>Details</h1>
             <img src= {bottles.img} />
             <p>Spirit: {bottles.spirit}</p>
@@ -26,6 +27,7 @@ function ItemDetail(props) {
             <p>Notes: {bottles.notes}</p>
             <button><Link to={`/bottles/`}>Go back</Link></button>
             <button><Link to={`/bottles/${bottles._id}/edit`}>Edit</Link></button>
+          </div>
         </>
     )
 };

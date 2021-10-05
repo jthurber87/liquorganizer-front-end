@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import { Link } from 'react-router-dom'
+import { Form, Button, Container } from 'react-bootstrap'
 
 function EditForm(props) {
     console.log(props)
@@ -88,32 +88,33 @@ function EditForm(props) {
             {loading ? (
                 <h3>Loading...</h3>
             ) : (
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor='spirit'>Spirit</label>
-                        <input name='spirit' id='spirit' value={input.spirit} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label htmlFor='brand'>Brand</label>
-                        <input name='brand' id='brand' value={input.brand} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label htmlFor='count'>Count</label>
-                        <input type='number' name='count' id='count' value={input.count} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label htmlFor='notes'>Notes</label>
-                        <input name='notes' id='notes' value={input.notes} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label htmlFor='img'>Image</label>
-                        <input name='img' id='img' value={input.img} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <input type='submit' value='Confirm Changes' />
-                        <button onClick={toggleDeleteModal}>Trash</button>
-                    </div>
-                </form>
+              <div className="card">
+                <Form onSubmit={handleSubmit}>
+                  <Form.Group className="mb-3" controlId="formBasicSpirit">
+                    <Form.Label htmlFor="spirit">Spirit</Form.Label>
+                    <Form.Control type="text" name='spirit' id='spirit' value={input.spirit} onChange={handleChange}/>
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicBrand">
+                    <Form.Label>Brand</Form.Label>
+                    <Form.Control type="text" name='brand' id='brand' value={input.brand} onChange={handleChange}/>
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicCount">
+                    <Form.Label>Count</Form.Label>
+                    <Form.Control type="number" name='count' id='count' value={input.count} onChange={handleChange} />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicNotes">
+                    <Form.Label>Notes</Form.Label>
+                    <Form.Control type="text" as="textarea" name='notes' id='notes' value={input.notes} onChange={handleChange} />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicImg">
+                    <Form.Label>Image</Form.Label>
+                    <Form.Control type="text" name='img' value={input.img} onChange={handleChange} />
+                  </Form.Group>
+                  <Button variant="primary" type="submit">
+                    Submit
+                  </Button>
+              </Form>
+            </div>
             )}
 
             {

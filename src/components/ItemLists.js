@@ -22,15 +22,17 @@ function ItemLists(props) {
 
     return (
         <>
-
             <div className="allBottles">
                 {bottles && bottles.map(item => (
-                    <div className='item' key={item._id}>
+                    <div className='item card-contain' key={item._id}>
+
                       <FlipCard item={item}/>
                       <h4>Quantity:{item.count}</h4>
                     </div>
                 ))}
+
             </div>
+
             <div>
                 <Link to='/bottles/new'>Add Bottle</Link>
         </div>

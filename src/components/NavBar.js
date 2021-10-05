@@ -7,7 +7,8 @@ const NavBar = () => {
     <div className="navy">
     <Navbar collapseOnSelect expand="lg left" bg="dark" variant="dark">
       <Container>
-      <Navbar.Brand href="/bottles">Liquorganizer</Navbar.Brand>
+      <Navbar.Brand href="/bottles">
+        <img src="https://static.thenounproject.com/png/200345-200.png" />Liquorganizer </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
 

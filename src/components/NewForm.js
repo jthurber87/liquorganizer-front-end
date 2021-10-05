@@ -36,6 +36,7 @@ const NewForm = (props) => {
         addItem(input)
     }
     return (
+      <div className="card">
         <form onSubmit={handleSubmit}>
             <label htmlFor='spirit'>Spirit</label>
             <input name='spirit' id='spirit' value={input.spirit} onChange={handleChange} />
@@ -54,6 +55,8 @@ const NewForm = (props) => {
             <br />
             <input type="submit" value="submit" />
         </form>
+
+      </div>
     )
 };
 

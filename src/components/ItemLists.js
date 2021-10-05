@@ -78,9 +78,12 @@ function ItemLists(props) {
                     {bottles && bottles.map(item => (
                         <div className='item' key={item._id}>
                             <FlipCard item={item} />
+                            <div className="counter">
+
                             <button onClick={() => decrementCount(item._id)}>-</button>
-                            <h4>Quantity:{item.count}</h4>
+                            <h4>{item.count}</h4>
                             <button onClick={() => incrementCount(item._id)}>+</button>
+                            </div>
                         </div>
                     ))}
                 </div>

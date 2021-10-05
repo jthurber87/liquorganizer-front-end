@@ -23,11 +23,13 @@ class FlipCard extends React.Component {
           <Link to={`/bottles/${this.props.item._id}/edit`}>{this.props.item.brand}</Link>
         </div>
 
+
         <div className="flipCard" onClick={this.handleClick}>
           <h1>{this.props.item.spirit}</h1>
           <h3>Notes:</h3>
           <h4>{this.props.item.notes}</h4>
         </div>
+
       </ReactCardFlip>
     )
   }

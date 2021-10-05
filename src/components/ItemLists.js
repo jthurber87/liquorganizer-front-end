@@ -54,9 +54,9 @@ function ItemLists(props) {
         }
     }
 
+
     const incrementCount = async (id) => {
         const updatedBottle = bottles.find(bottle => bottle._id === id);
-
         try {
             const response = await fetch('http://localhost:9000/bottles/' + id, {
                 method: 'PUT',

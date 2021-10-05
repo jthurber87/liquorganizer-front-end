@@ -111,10 +111,10 @@ function EditForm(props) {
                             <Form.Label>Image</Form.Label>
                             <Form.Control type="text" name='img' value={input.img} onChange={handleChange} />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Confirm Changes
-                        </Button>
-                        <Button variant="danger" onClick={handleShow}>Delete</Button>
+                        <div className="cancel-submit">
+                          <Button variant="danger" onClick={handleShow}>Delete</Button>
+                          <Button variant="primary" type="submit">Update</Button>
+                        </div>
                     </Form>
 
                     <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>

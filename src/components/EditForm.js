@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Form, Button, Container } from 'react-bootstrap'
+import { Form, Button, Container, Modal } from 'react-bootstrap'
+
+
 
 function EditForm(props) {
     console.log(props)
@@ -13,7 +15,10 @@ function EditForm(props) {
 
     const [input, setInput] = useState(initialState)
     const [loading, setLoading] = useState(true)
-    const [showModal, setShowModal] = useState(false)
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const getBottleToEdit = async (id) => {
         try {
@@ -23,8 +28,8 @@ function EditForm(props) {
             setInput(parsedBottle)
             setLoading(false)
             if (foundBottle.status === 200) {
-              const parsedBottle = await foundBottle.json();
-              setInput(parsedBottle)
+                const parsedBottle = await foundBottle.json();
+                setInput(parsedBottle)
             }
             setLoading(false)
         } catch (error) {
@@ -48,6 +53,7 @@ function EditForm(props) {
         props.history.push('/bottles/')
     }
 
+
     const handleSubmit = (e) => {
         e.preventDefault()
         const { spirit, brand, count, notes, img } = input;
@@ -63,12 +69,6 @@ function EditForm(props) {
         getBottleToEdit()
     }, [])
 
-    const toggleDeleteModal = (e) => {
-        e.preventDefault();
-        setShowModal(!showModal);
-    }
-
-
     const deleteBottle = async (id) => {
         try {
             const deleteBottle = await fetch('http://localhost:9000/bottles/' + id, {
@@ -82,55 +82,61 @@ function EditForm(props) {
         }
     }
 
+
+
     return (
         <div>
             {loading ? (
                 <h3>Loading...</h3>
             ) : (
-              <div className="card">
-                <Form onSubmit={handleSubmit}>
-                  <Form.Group className="mb-3" controlId="formBasicSpirit">
-                    <Form.Label htmlFor="spirit">Spirit</Form.Label>
-                    <Form.Control type="text" name='spirit' id='spirit' value={input.spirit} onChange={handleChange}/>
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="formBasicBrand">
-                    <Form.Label>Brand</Form.Label>
-                    <Form.Control type="text" name='brand' id='brand' value={input.brand} onChange={handleChange}/>
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="formBasicCount">
-                    <Form.Label>Count</Form.Label>
-                    <Form.Control type="number" name='count' id='count' value={input.count} onChange={handleChange} />
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="formBasicNotes">
-                    <Form.Label>Notes</Form.Label>
-                    <Form.Control type="text" as="textarea" name='notes' id='notes' value={input.notes} onChange={handleChange} />
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="formBasicImg">
-                    <Form.Label>Image</Form.Label>
-                    <Form.Control type="text" name='img' value={input.img} onChange={handleChange} />
-                  </Form.Group>
-                  <Button variant="primary" type="submit">
-                    Confirm Changes
-                  </Button>
-                  <Button variant="danger" onClick={toggleDeleteModal}>Delete</Button>
-              </Form>
-            </div>
-            )}
+                <div className="card">
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group className="mb-3" controlId="formBasicSpirit">
+                            <Form.Label htmlFor="spirit">Spirit</Form.Label>
+                            <Form.Control type="text" name='spirit' id='spirit' value={input.spirit} onChange={handleChange} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicBrand">
+                            <Form.Label>Brand</Form.Label>
+                            <Form.Control type="text" name='brand' id='brand' value={input.brand} onChange={handleChange} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicCount">
+                            <Form.Label>Count</Form.Label>
+                            <Form.Control type="number" name='count' id='count' value={input.count} onChange={handleChange} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicNotes">
+                            <Form.Label>Notes</Form.Label>
+                            <Form.Control type="text" as="textarea" name='notes' id='notes' value={input.notes} onChange={handleChange} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicImg">
+                            <Form.Label>Image</Form.Label>
+                            <Form.Control type="text" name='img' value={input.img} onChange={handleChange} />
+                        </Form.Group>
+                        <Button variant="primary" type="submit">
+                            Confirm Changes
+                        </Button>
+                        <Button variant="danger" onClick={handleShow}>Delete</Button>
+                    </Form>
 
-            {
-                showModal ? (
-                    <div>
-                        <h1>Yeah Trash!!!!</h1>
-                        <h3>Are you sure?</h3>
-                        <div>
-                            <button onClick={() => deleteBottle(input._id)}>Trash!!!!</button>
-                            <button onClick={toggleDeleteModal}>Cancel</button>
-                        </div>
-                    </div>
-                ) : null
-            }
+                    <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Last Confirmation to delete</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            Are you sure you want to delete this liquor?
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="danger" onClick={() => deleteBottle(input._id)}>
+                                Delete
+                            </Button>
+                            <Button variant="secondary" onClick={handleClose}>Cancel</Button>
+                        </Modal.Footer>
+                    </Modal>
+                </div>
+            )}
         </div>
     )
 }
+
+
 
 export default EditForm

@@ -113,7 +113,7 @@ function EditForm(props) {
                   <Button variant="primary" type="submit">
                     Confirm Changes
                   </Button>
-
+                  <Button variant="danger" onClick={toggleDeleteModal}>Delete</Button>
               </Form>
             </div>
             )}

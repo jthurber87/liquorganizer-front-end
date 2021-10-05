@@ -7,7 +7,7 @@ const NewForm = (props) => {
         brand: "",
         count: 1,
         notes: "",
-        img: ""
+        img: "https://static.thenounproject.com/png/200345-200.png"
     })
 
     //Fetch(POST-CREATE)

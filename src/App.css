@@ -4,20 +4,32 @@
   display: inline;
 }
 
-.App{
+.navbot{
+  max-height: 65px;
+  background-color: white;
+
+}
+.navbar-brand{
+  max-height: 65px;
+}
+body {
   background-image:
-  linear-gradient(to bottom, rgb(33, 37, 31, 0.2), rgba(225, 225, 225, 0.43)),
+  linear-gradient(to bottom, rgb(30, 36, 34, 0.42), rgba(225, 225, 225, 0.33)),
   url("https://images.unsplash.com/photo-1520776174717-a1ea0e6069df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8");
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.App{
   display: flex;
   flex-direction: column;
   justify-content: flex-flex-start;
   align-items: center;
   max-width: inherit;
   height: auto;
+  font-family: monospace;
 }
 
 .navbar-nav {

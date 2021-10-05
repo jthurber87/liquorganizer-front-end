@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import FlipCard from './FlipCard'
-
+import { useHistory } from 'react-router-dom';
+import { Button } from 'react-bootstrap'
 
 
 function ItemLists(props) {
+    let history = useHistory();
     const [bottles, setBottles] = useState([])
+    const redirect = () => {
+      history.push('/bottles/new')
+    }
     const getBottles = async () => {
         try {
             const bottlesResults = await fetch('http://localhost:9000/bottles/');
@@ -88,7 +93,7 @@ function ItemLists(props) {
                     ))}
                 </div>
                 <div>
-                    <Link to='/bottles/new'>Add Bottle</Link>
+                    <Button onClick={redirect}>Add Bottle</Button>
                 </div>
             </>
         )

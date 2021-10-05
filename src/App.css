@@ -12,6 +12,7 @@
 .navbar-brand{
   max-height: 65px;
 }
+
 body {
   background-image:
   linear-gradient(to bottom, rgb(30, 36, 34, 0.42), rgba(225, 225, 225, 0.33)),
@@ -107,6 +108,7 @@ form {
 
 img {
   max-width: 100px;
+  max-height: auto;
   border-radius: 25%;
 }
 

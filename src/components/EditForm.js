@@ -111,7 +111,7 @@ function EditForm(props) {
                     <Form.Control type="text" name='img' value={input.img} onChange={handleChange} />
                   </Form.Group>
                   <Button variant="primary" type="submit">
-                    Submit
+                    Confirm Changes
                   </Button>
                   <Button variant="danger" onClick={toggleDeleteModal}>Delete</Button>
               </Form>

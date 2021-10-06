@@ -3,6 +3,7 @@ import ItemLists from './components/ItemLists';
 import NewForm from './components/NewForm';
 import EditForm from './components/EditForm';
 import NavBar from './components/NavBar';
+import Login from './components/Login';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/bottles" component={ItemLists} />
           <Route exact path="/bottles/new" render={(routerProps)=><NewForm {...routerProps}/>}/>
           <Route exact path="/bottles/:id/edit" component={EditForm} />
+          <Route exact path="/auth/login" component={Login} />
         </Switch>
       </Router>
     </div>

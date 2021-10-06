@@ -20,15 +20,18 @@
   max-height: 70px;
 }
 
-<<<<<<< HEAD
+a{
+  color: white;
+}
+
 .NavDropdown{
   margin-top: 10vh;
-=======
+}
+
 .cancel-submit {
   width: 80%;
   display: flex;
   justify-content: space-around;
->>>>>>> main
 }
 
 body {

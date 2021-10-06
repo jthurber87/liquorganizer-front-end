@@ -3,11 +3,17 @@ import ReactCardFlip from "react-card-flip";
 import Data from "./data.json";
 import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useHistory } from 'react-router-dom';
 
 
 
 const Card = ({ dev }) => {
   const [isFlipped, setIsFlipped] = React.useState(false);
+  let history = useHistory();
+
+  const redirect = (url) => {
+    history.push(url)
+  }
   return (
     <>
     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
@@ -41,7 +47,7 @@ const Card = ({ dev }) => {
           <div><strong>Favorite Quote:</strong> <br />{dev.favoriteQuote}</div>
           <div>
           <br />
-          <button class="btn btn-primary"><a href={dev.linkedIn}>LinkedIn</a></button>
+          <button onClick={()=> redirect(dev.linkedIn) } className="btn btn-secondary"><a href={dev.linkedIn}>LinkedIn</a></button>
           </div>
         </div>
 

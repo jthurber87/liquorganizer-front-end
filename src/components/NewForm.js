@@ -27,7 +27,7 @@ const NewForm = (props) => {
                 body: JSON.stringify(data),
                 headers: {
                     "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": *
+                    "Access-Control-Allow-Origin": "*"
                 },
             };
             const createdItem = await fetch("https://liquorganizer-back-end.herokuapp.com/bottles", configs)

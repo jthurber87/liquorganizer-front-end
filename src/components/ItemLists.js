@@ -13,13 +13,9 @@ function ItemLists(props) {
   }
 
   const getBottles = async () => {
-    try {
       const bottlesResults = await fetch("https://liquorganizer-back-end.herokuapp.com/bottles");
       const parsedBottles = await bottlesResults.json();
       setBottles(parsedBottles);
-    } catch (error) {
-      console.log(error)
-    }
   }
 
   const decrementCount = async (id) => {

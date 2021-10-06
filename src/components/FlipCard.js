@@ -20,7 +20,9 @@ class FlipCard extends React.Component {
       <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
           <div className="flipCard" onClick={this.handleClick}>
             <img src={this.props.item.img} /><br/>
+            <div className="bot_item">
             <Link to={`/bottles/${this.props.item._id}/edit`}>{this.props.item.brand}</Link>
+          </div>
           </div>
 
           <div className="flipCard" onClick={this.handleClick}>

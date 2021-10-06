@@ -14,10 +14,10 @@ const NavBar = () => {
 
       <Navbar.Collapse id="responsive-navbar-nav collasible-nav-dropdown">
         <Nav className="me-auto">
-          <NavDropdown title="More" id="">
+          <NavDropdown title="More" className="dropMore">
             <NavDropdown.Item href="/bottles/new">Add A Bottle</NavDropdown.Item>
 
-            <NavDropdown.Item href="#action/3.2">Another Action</NavDropdown.Item>
+            <NavDropdown.Item href="/aboutus">Meet our Devs</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Another Action</NavDropdown.Item>
           </NavDropdown>
         </Nav>

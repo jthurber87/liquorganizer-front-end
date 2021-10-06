@@ -1,0 +1,69 @@
+import React from "react";
+import ReactCardFlip from "react-card-flip";
+import Data from "./data.json";
+import { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
+const Card = ({ dev }) => {
+  const [isFlipped, setIsFlipped] = React.useState(false);
+  return (
+    <>
+    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+
+      <div
+        onClick={() => setIsFlipped((prev) => !prev)}
+        className="aboutCards"
+      >
+        <div className="cardDevs">
+          <h5><strong>{dev.title}</strong></h5>
+          <img className="devImg"src={dev.pic} />
+
+          <div className="frontInfo">
+            <div><strong>{dev.position}</strong></div>
+            <div className="aboutFront">{dev.aboutMe}</div>
+
+          </div>
+        </div>
+      </div>
+      <div
+
+        onClick={() => setIsFlipped((prev) => !prev)}
+        className="devCard"
+      >
+      <div className="devContainer">
+        <h5><strong>{dev.title}</strong></h5>
+
+        <div className="devInfo">
+
+          <div><strong>Technical Skills:</strong> <br /> {dev.languages}</div>
+          <div><strong>Favorite Quote:</strong> <br />{dev.favoriteQuote}</div>
+          <div>
+          <br />
+          <button class="btn btn-primary"><a href={dev.linkedIn}>LinkedIn</a></button>
+          </div>
+        </div>
+
+      </div>
+      </div>
+
+
+    </ReactCardFlip>
+    </>
+  );
+};
+
+const AboutUs = () => {
+  return (
+
+    <div className="devs">
+      {Data.map((item, index) => (
+        <Card dev={item} key={`card-${index}`} />
+      ))}
+    </div>
+  );
+};
+
+
+export default AboutUs;

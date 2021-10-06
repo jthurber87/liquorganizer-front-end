@@ -26,10 +26,12 @@ const NewForm = (props) => {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": *
                 },
             };
-            await fetch("https://liquorganizer-back-end.herokuapp.com/bottles", configs)
+            const createdItem = await fetch("https://liquorganizer-back-end.herokuapp.com/bottles", configs)
+            const parsedItem = await createdItem.json()
             props.history.push('/bottles')
         } catch (error) {
             console.log(error)

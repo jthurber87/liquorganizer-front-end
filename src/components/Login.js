@@ -1,8 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const Login = () => {
- 
+const Login = (props) => {
+    const redirect = () => {
+        props.history.push('/auth/register')
+      }
 
     return (<>
         <div>
@@ -13,7 +15,7 @@ const Login = () => {
                 <label htmlFor="password">Password</label>
                 <input type="password" name="password" id="password" />
                 <button>Login</button>
-                <Link to='/auth/register'>Register</Link>
+                <button onClick={redirect}>Register</button>
             </form>
         </div>
     </>)

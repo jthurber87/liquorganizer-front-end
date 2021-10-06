@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom';
+
 
 const NewForm = (props) => {
+
+    let history = useHistory();
+
+    const redirect = () => {
+    history.push('/bottles')
+    }
+
     const [input, setInput] = useState({
         spirit: "",
         brand: "",
@@ -17,10 +26,12 @@ const NewForm = (props) => {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*"
                 },
             };
-            await fetch("http://localhost:9000/bottles", configs)
+            const createdItem = await fetch("https://liquorganizer-back-end.herokuapp.com/bottles", configs)
+            const parsedItem = await createdItem.json()
             props.history.push('/bottles')
         } catch (error) {
             console.log(error)
@@ -58,9 +69,10 @@ const NewForm = (props) => {
             <Form.Label>Image</Form.Label>
             <Form.Control type="text" name='img' value={input.img} onChange={handleChange} />
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
+          <div className="cancel-submit">
+            <Button onClick={redirect}>Back</Button>
+            <Button variant="primary" type="submit">Submit</Button>
+          </div>
       </Form>
 
 

@@ -17,15 +17,12 @@ const NavBar = () => {
           <NavDropdown title="More" className="dropMore">
             <NavDropdown.Item href="/bottles/new">Add A Bottle</NavDropdown.Item>
 
-            <NavDropdown.Item href="/aboutus">Meet our Devs</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Another Action</NavDropdown.Item>
+            <NavDropdown.Item href="/aboutus">Meet the Devs</NavDropdown.Item>
           </NavDropdown>
         </Nav>
         <Nav>
-          <Nav.Link href="/login">Login</Nav.Link>
-          <Nav.Link eventKey={2} href="/logout">
-            Log Out
-          </Nav.Link>
+          <Nav.Link href="/auth/login">Login</Nav.Link>
+          <Nav.Link eventKey={2} href="/auth/logout">Log Out</Nav.Link>
         </Nav>
       </Navbar.Collapse>
       </Container>

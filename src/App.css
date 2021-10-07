@@ -148,7 +148,7 @@ img {
   background-color: rgb(255,255,255,0.80);
   box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.2);
   width: 20vw;
-  height: 50vh;
+  height: 40vh;
   display: flex;
   justify-content: space-between;
   padding: 5%;
@@ -182,8 +182,8 @@ h5{
   justify-content: space-around;
   margin-top: 13%;
   width: 85vw;
-  height: 60vh;
-  backdrop-filter: blur(2px);
+  height: 80vh;
+  /* backdrop-filter: blur(2px); */
   border-radius: 25px;
   padding-right: 5%;
   padding-left: 5%;
@@ -191,6 +191,7 @@ h5{
 
 .aboutCards{
   width:250px;
+
 }
 .devContainer{
   margin-top: 9vh;

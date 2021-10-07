@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import FlipCard from './FlipCard'
-import {useHistory} from 'react-router-dom';
-import {Button} from 'react-bootstrap'
+import { useHistory } from 'react-router-dom';
+import { Button } from 'react-bootstrap'
 
 function ItemLists(props) {
   let history = useHistory();
@@ -13,9 +13,9 @@ function ItemLists(props) {
   }
 
   const getBottles = async () => {
-      const bottlesResults = await fetch("https://liquorganizer-back-end.herokuapp.com/bottles");
-      const parsedBottles = await bottlesResults.json();
-      setBottles(parsedBottles);
+    const bottlesResults = await fetch("https://liquorganizer-back-end.herokuapp.com/bottles");
+    const parsedBottles = await bottlesResults.json();
+    setBottles(parsedBottles);
   }
 
   const decrementCount = async (id) => {
@@ -36,11 +36,11 @@ function ItemLists(props) {
       setBottles(bottles => {
         return bottles.map(item => (
           item._id === id
-          ? {
-            ...parsedBottle,
-            count: parsedBottle.count
-          }
-          : item))
+            ? {
+              ...parsedBottle,
+              count: parsedBottle.count
+            }
+            : item))
       });
     } catch (error) {
       console.log(error)
@@ -64,11 +64,11 @@ function ItemLists(props) {
       setBottles(bottles => {
         return bottles.map(item => (
           item._id === id
-          ? {
-            ...parsedBottle,
-            count: parsedBottle.count
-          }
-          : item))
+            ? {
+              ...parsedBottle,
+              count: parsedBottle.count
+            }
+            : item))
       })
     } catch (error) {
       console.log(error)
@@ -79,9 +79,9 @@ function ItemLists(props) {
     getBottles();
   }, []);
 
-  return (<> < div className = "allBottles" > {
+  return (<> < div className="allBottles" > {
     bottles && bottles.map(item => (<div className='item' key={item._id}>
-      <FlipCard item={item}/>
+      <FlipCard item={item} />
       <div className="counter">
         <button onClick={() => decrementCount(item._id)}>-</button>
         <h4>{item.count}</h4>
@@ -89,9 +89,9 @@ function ItemLists(props) {
       </div>
     </div>))
   } < /div>
-          <div>
-          <Button onClick={redirect}>Add Bottle</Button > </div>
-<br/>
-</>)
+    <div>
+      <Button onClick={redirect}>Add Bottle</Button > </div>
+    <br />
+  </>)
 }
-export default ItemLists
+    export default ItemLists

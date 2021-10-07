@@ -15,12 +15,8 @@ function Register(props) {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*"
                 },
-            };
-<<<<<<< HEAD
-            const creatUser = await fetch('https://liquorganizer-back-end.herokuapp.com/auth', configs)
-=======
+            }
             const creatUser = await fetch('https://liquorganizer-back-end.herokuapp.com/auth/register', configs)
->>>>>>> 3f676b5fa96c51893c9b600c17b80d2268c5e7e2
             const parsedUser = await creatUser.json()
             console.log(parsedUser)
             props.history.push('/auth/login')
@@ -39,6 +35,10 @@ function Register(props) {
 
     return(
         <div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">User Name</label>
                 <input type="text" name="username" id="username" value={input.username} onChange={handleChange}/>

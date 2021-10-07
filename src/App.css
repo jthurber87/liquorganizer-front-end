@@ -187,10 +187,11 @@ h5{
   border-radius: 25px;
   padding-right: 5%;
   padding-left: 5%;
-
-
 }
 
+.aboutCards{
+  width:250px;
+}
 .devContainer{
   margin-top: 9vh;
   border-radius: 25px;

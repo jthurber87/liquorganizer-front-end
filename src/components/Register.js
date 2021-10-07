@@ -16,7 +16,11 @@ function Register(props) {
                     "Access-Control-Allow-Origin": "*"
                 },
             };
+<<<<<<< HEAD
             const creatUser = await fetch('https://liquorganizer-back-end.herokuapp.com/auth', configs)
+=======
+            const creatUser = await fetch('https://liquorganizer-back-end.herokuapp.com/auth/register', configs)
+>>>>>>> 3f676b5fa96c51893c9b600c17b80d2268c5e7e2
             const parsedUser = await creatUser.json()
             console.log(parsedUser)
             props.history.push('/auth/login')

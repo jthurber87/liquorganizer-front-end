@@ -33,7 +33,7 @@ Liquorganizer is a clean, simple inventory system for bars, restaurants, and ind
 ## Installation
 Clone this front end repo
 ``` 
-$ git@github.com:jthurber87/liquorganizer-front-end.git
+$ git clone git@github.com:jthurber87/liquorganizer-front-end.git
 $ npm install
 $ npm start
 ```

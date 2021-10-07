@@ -55,3 +55,32 @@ Dae Young Hwang
 Isabel Luk
 
 ## Code Snippets
+```
+  const incrementCount = async (id) => {
+    const updatedBottle = bottles.find(bottle => bottle._id === id);
+    try {
+      const response = await fetch('https://liquorganizer-back-end.herokuapp.com/bottles/' + id, {
+        method: 'PUT',
+        body: JSON.stringify({
+          ...updatedBottle,
+          count: updatedBottle.count + 1
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      const parsedBottle = await response.json();
+      setBottles(bottles => {
+        return bottles.map(item => (
+          item._id === id
+            ? {
+              ...parsedBottle,
+              count: parsedBottle.count
+            }
+            : item))
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+```

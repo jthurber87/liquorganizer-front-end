@@ -71,7 +71,7 @@ const NewForm = (props) => {
           </Form.Group>
           <div className="cancel-submit">
             <Button onClick={redirect}>Back</Button>
-            <Button variant="primary" type="submit">Submit</Button>
+            <Button variant="success" type="submit">Submit</Button>
           </div>
       </Form>
 

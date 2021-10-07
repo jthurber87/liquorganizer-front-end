@@ -113,7 +113,7 @@ function EditForm(props) {
                         </Form.Group>
                         <div className="cancel-submit">
                           <Button variant="danger" onClick={handleShow}>Delete</Button>
-                          <Button variant="primary" type="submit">Update</Button>
+                          <Button variant="success" type="submit">Update</Button>
                         </div>
                     </Form>
 
@@ -125,10 +125,10 @@ function EditForm(props) {
                             Are you sure you want to delete this liquor?
                         </Modal.Body>
                         <Modal.Footer>
+                          <Button variant="secondary" onClick={handleClose}>Cancel</Button>
                             <Button variant="danger" onClick={() => deleteBottle(input._id)}>
                                 Delete
                             </Button>
-                            <Button variant="secondary" onClick={handleClose}>Cancel</Button>
                         </Modal.Footer>
                     </Modal>
                 </div>

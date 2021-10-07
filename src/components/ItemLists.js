@@ -89,8 +89,8 @@ function ItemLists(props) {
       </div>
     </div>))
   } < /div>
-    <div>
-      <Button onClick={redirect}>Add Bottle</Button > </div>
+    <div className="addbottlebutton">
+      <Button variant="secondary" onClick={redirect}>Add Bottle</Button > </div>
     <br />
   </>)
 }

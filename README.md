@@ -30,7 +30,7 @@ Liquorganizer is a clean, simple inventory system for bars, restaurants, and ind
 | React     	| An open-source front-end JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. 	|
 | Node.js   	| An open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.                          	|
 | Bootstrap 	| Build responsive, mobile-first projects on the web with the world's most used front-end component library.                                                                       	|
-## Instalation
+## Installation
 Clone this front end repo
 ``` 
 $ git@github.com:jthurber87/liquorganizer-front-end.git

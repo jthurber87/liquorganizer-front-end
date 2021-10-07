@@ -36,12 +36,12 @@ const Card = ({ dev }) => {
       <div
 
         onClick={() => setIsFlipped((prev) => !prev)}
-        className="devCard"
+        className="aboutCards"
       >
-      <div className="devContainer">
+      <div className="cardDevs">
         <h5><strong>{dev.title}</strong></h5>
 
-        <div className="devInfo">
+        <div className="aboutCards">
 
           <div><strong>Technical Skills:</strong> <br /> {dev.languages}</div>
           <div><strong>Favorite Quote:</strong> <br />{dev.favoriteQuote}</div>

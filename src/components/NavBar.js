@@ -5,7 +5,7 @@ import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap';
 const NavBar = () => {
   return(
     <div className="navy">
-    <Navbar collapseOnSelect expand="lg left" bg="dark" variant="dark">
+    <Navbar fixed="top" collapseOnSelect expand="lg left" bg="dark" variant="dark" className="navbar">
       <Container>
       <Navbar.Brand href="/bottles">
         <img src="https://static.thenounproject.com/png/200345-200.png" class="navbot" />    Liquorganizer </Navbar.Brand>

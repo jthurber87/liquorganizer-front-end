@@ -6,6 +6,8 @@ import NavBar from './components/NavBar';
 import AboutUs from './components/AboutUs';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route exact path="/bottles/new" render={(routerProps)=><NewForm {...routerProps}/>}/>
           <Route exact path="/bottles/:id/edit" component={EditForm} />
           <Route exact path="/aboutus" component={AboutUs} />
+          <Route exact path="/auth/login" component={Login} />
+          <Route exact path="/auth/register" component={Register} />
         </Switch>
       </Router>
     </div>

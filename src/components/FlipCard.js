@@ -26,9 +26,9 @@ class FlipCard extends React.Component {
           </div>
 
           <div className="flipCard" onClick={this.handleClick}>
-            <h3>{this.props.item.spirit}</h3>
+            <h3><strong>{this.props.item.spirit}</strong></h3>
             <h4>Notes:</h4>
-            <h5>{this.props.item.notes}</h5>
+            <h6><i>{this.props.item.notes}</i></h6>
           </div>
       </ReactCardFlip>
     )

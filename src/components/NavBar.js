@@ -5,7 +5,7 @@ import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap';
 const NavBar = () => {
   return(
     <div className="navy">
-    <Navbar collapseOnSelect expand="lg left" bg="dark" variant="dark">
+    <Navbar fixed="top" collapseOnSelect expand="lg left" bg="dark" variant="dark" className="navbar">
       <Container>
       <Navbar.Brand href="/bottles">
         <img src="https://static.thenounproject.com/png/200345-200.png" class="navbot" />    Liquorganizer </Navbar.Brand>
@@ -17,7 +17,7 @@ const NavBar = () => {
           <NavDropdown title="More" id="">
             <NavDropdown.Item href="/bottles/new">Add A Bottle</NavDropdown.Item>
 
-            <NavDropdown.Item href="#devs">Meet the Devs</NavDropdown.Item>
+            <NavDropdown.Item href="/aboutus">Meet the Devs</NavDropdown.Item>
           </NavDropdown>
         </Nav>
         <Nav>

@@ -44,7 +44,7 @@ function Register(props) {
                 <input type="text" name="username" id="username" value={input.username} onChange={handleChange}/>
                 <label htmlFor="password">Password</label>
                 <input type="password" name="password" value={input.password} onChange={handleChange}/>
-                <input type="submit" value="Create a New Account"/>
+                <button onClick={()=>{props.history.push('/auth/login')}}>Create Account</button>
             </form>
         </div>
     )

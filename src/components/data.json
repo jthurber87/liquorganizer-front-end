@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Jay Thurber",
+    "position": "Project Manager/Back End",
+    "aboutMe": "Nurse turned Full Stack Developer",
+    "languages": "Also the best testing hahahaha this is driving me crazy where my purple suit",
+    "favoriteQuote": "I like turtles",
+    "linkedIn": "https://www.linkedin.com/in/jthurber87/",
+    "pic": "https://media-exp1.licdn.com/dms/image/C4E03AQEcPBl3LkJBlg/profile-displayphoto-shrink_400_400/0/1628879241855?e=1639008000&v=beta&t=MkFftY8zFOF-W-WB01Tf0OIzxK8QnVyhtpF_6i2peRo"
+  },
+  {
+    "title": "Isabel Luk",
+    "position": "Junior Dev",
+    "aboutMe": "Hey! How's it going? Thank you for checking out our page. We had so much fun developing it. Check us out! Cheers!",
+    "languages": "JavaScript, HTML, CSS, jQuery, CSS, Git, Github, Ruby, Python, Node, Express.js, AWS, Mongoose, React, AWS, SPSS, SAS.",
+    "favoriteQuote":   "What are you doing in my swamp? -Shrek ",
+    "linkedIn": "https://www.linkedin.com/in/isabellukk/",
+    "pic": "https://media-exp1.licdn.com/dms/image/C5603AQHfwwpBpwLdCQ/profile-displayphoto-shrink_400_400/0/1617694747902?e=1639008000&v=beta&t=f6wlOD98DBOpLOVLRwgS_QhXnZwXQWT1b7zsPIdZpks"
+  },
+  {
+    "title": "Dae Young Hwang",
+    "position": "Junior Dev",
+    "aboutMe": "Im the very best. styling will be the death of me can i get an amen",
+    "languages": "Also the best testing hahahaha this is driving me crazy where my purple suit",
+    "favoriteQuote": "Who let the dogs out?",
+    "linkedIn": "https://www.linkedin.com/in/dae-young-hwang/",
+    "pic": "https://media-exp1.licdn.com/dms/image/C5603AQHHceUcpbdPfg/profile-displayphoto-shrink_400_400/0/1628887289964?e=1639008000&v=beta&t=fMfAHY0LWjG4k81K8ISTB_968t3vj1CINmKLZGtgmxA"
+  }
+]

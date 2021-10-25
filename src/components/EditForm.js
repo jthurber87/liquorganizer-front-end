@@ -112,8 +112,8 @@ function EditForm(props) {
                             <Form.Control type="text" name='img' value={input.img} onChange={handleChange} />
                         </Form.Group>
                         <div className="cancel-submit">
-                          <Button variant="danger" onClick={handleShow}>Delete</Button>
-                          <Button variant="success" type="submit">Update</Button>
+                            <Button variant="danger" onClick={handleShow}>Delete</Button>
+                            <Button variant="success" type="submit">Update</Button>
                         </div>
                     </Form>
 
@@ -125,7 +125,7 @@ function EditForm(props) {
                             Are you sure you want to delete this liquor?
                         </Modal.Body>
                         <Modal.Footer>
-                          <Button variant="secondary" onClick={handleClose}>Cancel</Button>
+                            <Button variant="secondary" onClick={handleClose}>Cancel</Button>
                             <Button variant="danger" onClick={() => deleteBottle(input._id)}>
                                 Delete
                             </Button>

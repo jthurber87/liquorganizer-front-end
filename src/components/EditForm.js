@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Form, Button, Container, Modal } from 'react-bootstrap'
+import React, { useState, useEffect } from 'react';
+import { Form, Button, Modal } from 'react-bootstrap';
 
 
 
@@ -11,10 +11,10 @@ function EditForm(props) {
         count: 0,
         notes: '',
         img: ''
-    }
+    };
 
-    const [input, setInput] = useState(initialState)
-    const [loading, setLoading] = useState(true)
+    const [input, setInput] = useState(initialState);
+    const [loading, setLoading] = useState(true);
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -45,44 +45,40 @@ function EditForm(props) {
                 "Content-Type": "application/json"
             }
         }
-
-        const updateBottle = await fetch("https://liquorganizer-back-end.herokuapp.com/bottles/" + id, configs)
-        console.log(updateBottle)
+        const updateBottle = await fetch("https://liquorganizer-back-end.herokuapp.com/bottles/" + id, configs);
+        console.log(updateBottle);
         const parsedUpdateBottle = await updateBottle.json();
         console.log('after update:', parsedUpdateBottle.spirit);
-        props.history.push('/bottles/')
-    }
-
+        props.history.push('/bottles/');
+    };
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const { spirit, brand, count, notes, img } = input;
-        const bottlesData = { spirit, brand, count, notes, img }
+        const bottlesData = { spirit, brand, count, notes, img };
         updateBottle(input._id, bottlesData);
-    }
+    };
 
     const handleChange = (e) => {
-        setInput({ ...input, [e.target.name]: e.target.value })
-    }
+        setInput({ ...input, [e.target.name]: e.target.value });
+    };
 
     useEffect(() => {
-        getBottleToEdit()
-    }, [])
+        getBottleToEdit();
+    }, []);
 
     const deleteBottle = async (id) => {
         try {
             const deleteBottle = await fetch('https://liquorganizer-back-end.herokuapp.com/bottles/' + id, {
                 method: 'DELETE',
-            })
+            });
             console.log(deleteBottle);
             const parsedDeletedBottle = await deleteBottle.json();
-            props.history.push('/bottles/')
+            props.history.push('/bottles/');
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-
-
+    };
 
     return (
         <div>
@@ -132,10 +128,10 @@ function EditForm(props) {
                         </Modal.Footer>
                     </Modal>
                 </div>
-            )}
+            )};
         </div>
     )
-}
+};
 
 
 

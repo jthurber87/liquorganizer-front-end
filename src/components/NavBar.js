@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap';
 
 
@@ -10,13 +10,10 @@ const NavBar = () => {
       <Navbar.Brand href="/bottles">
         <img src="https://static.thenounproject.com/png/200345-200.png" class="navbot" />    Liquorganizer </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-
-
       <Navbar.Collapse id="responsive-navbar-nav collasible-nav-dropdown">
         <Nav className="me-auto">
           <NavDropdown title="More" className="dropMore">
             <NavDropdown.Item href="/bottles/new">Add A Bottle</NavDropdown.Item>
-
             <NavDropdown.Item href="/aboutus">Meet the Devs</NavDropdown.Item>
           </NavDropdown>
         </Nav>
@@ -28,7 +25,7 @@ const NavBar = () => {
       </Container>
     </Navbar>
     </div>
-  )}
+  )};
 
 
-export default NavBar
+export default NavBar;

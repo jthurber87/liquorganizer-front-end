@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
 
 const NewForm = (props) => {
   let history = useHistory();
-
   const redirect = () => {
     history.push('/bottles')
-  }
+  };
 
   const [input, setInput] = useState({
       spirit: "",
@@ -16,7 +15,7 @@ const NewForm = (props) => {
       count: 1,
       notes: "",
       img: "https://static.thenounproject.com/png/200345-200.png"
-  })
+  });
 
   //Fetch(POST-CREATE)
   const addItem = async (data) => {
@@ -29,22 +28,23 @@ const NewForm = (props) => {
                   "Access-Control-Allow-Origin": "*"
               },
           };
-          const createdItem = await fetch("https://liquorganizer-back-end.herokuapp.com/bottles", configs)
-          const parsedItem = await createdItem.json()
-          props.history.push('/bottles')
+          const createdItem = await fetch("https://liquorganizer-back-end.herokuapp.com/bottles", configs);
+          const parsedItem = await createdItem.json();
+          props.history.push('/bottles');
       } catch (error) {
-          console.log(error)
+          console.log(error);
       }
-  }
+  };
 
   const handleChange = (e) => {
-      setInput({ ...input, [e.target.name]: e.target.value })
-  }
+      setInput({ ...input, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
-      e.preventDefault()
-      addItem(input)
-  }
+      e.preventDefault();
+      addItem(input);
+  };
+
   return (
     <div className="card">
       <Form onSubmit={handleSubmit}>

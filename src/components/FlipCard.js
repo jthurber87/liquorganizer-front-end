@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import ReactCardFlip from 'react-card-flip';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 class FlipCard extends React.Component {
   constructor() {
     super();
@@ -8,12 +8,12 @@ class FlipCard extends React.Component {
       isFlipped: false
     };
     this.handleClick = this.handleClick.bind(this);
-  }
+  };
 
   handleClick(e) {
     e.preventDefault();
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
-  }
+  };
 
   render() {
     return (
@@ -24,7 +24,6 @@ class FlipCard extends React.Component {
               <Link to={`/bottles/${this.props.item._id}/edit`}>{this.props.item.brand}</Link>
             </div>
           </div>
-
           <div className="flipCard" onClick={this.handleClick}>
             <h3><strong>{this.props.item.spirit}</strong></h3>
             <h4>Notes:</h4>
@@ -33,6 +32,6 @@ class FlipCard extends React.Component {
       </ReactCardFlip>
     )
   }
-}
+};
 
-export default FlipCard
+export default FlipCard;

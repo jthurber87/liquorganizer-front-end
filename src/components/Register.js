@@ -4,7 +4,7 @@ function Register(props) {
     const [input, setInput] = useState({
         username:'',
         password:''
-    })
+    });
 
     const createAccount = async (user) => {
         try {
@@ -15,23 +15,23 @@ function Register(props) {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*"
                 },
-            }
-            const creatUser = await fetch('https://liquorganizer-back-end.herokuapp.com/auth/register', configs)
-            const parsedUser = await creatUser.json()
-            console.log(parsedUser)
-            props.history.push('/auth/login')
+            };
+            const creatUser = await fetch('https://liquorganizer-back-end.herokuapp.com/auth/register', configs);
+            const parsedUser = await creatUser.json();
+            console.log(parsedUser);
+            props.history.push('/auth/login');
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
+    };
 
     const handleChange = (e) => {
-        setInput({...input, [e.target.name]: e.target.value})
+        setInput({...input, [e.target.name]: e.target.value});
     };
 
     const handleSubmit = (e) => {
-        createAccount(input)
-    }
+        createAccount(input);
+    };
 
     return(
         <div>
@@ -48,6 +48,6 @@ function Register(props) {
             </form>
         </div>
     )
-}
+};
 
 export default Register;

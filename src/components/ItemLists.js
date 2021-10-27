@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import FlipCard from './FlipCard'
+import React, { useState, useEffect } from 'react';
+import FlipCard from './FlipCard';
 import { useHistory } from 'react-router-dom';
-import { Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap';
 import { Fragment } from 'react';
 
 const ItemLists = () => {

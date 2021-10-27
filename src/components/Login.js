@@ -1,16 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 const Login = (props) => {
     const redirect = () => {
         props.history.push('/auth/register')
-    }
+    };
 
     return (<>
     <br/>
     <br/>
     <br/>
     <br/>
-
     <div>
         <h1>Login Page</h1>
         <form>

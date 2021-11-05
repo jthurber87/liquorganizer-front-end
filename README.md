@@ -31,6 +31,8 @@ Liquorganizer is a clean, simple inventory system for bars, restaurants, and ind
 | Node.js   	| An open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.                          	|
 | Bootstrap 	| Build responsive, mobile-first projects on the web with the world's most used front-end component library.                                                                       	|
 ## Installation
+
+Link to back end repo https://github.com/jthurber87/liquorganizer-back-end
 Clone this front end repo
 ``` 
 $ git clone git@github.com:jthurber87/liquorganizer-front-end.git
